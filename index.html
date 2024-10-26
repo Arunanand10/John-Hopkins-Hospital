@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Hopkins Hospital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to John Hopkins Hospital</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="appointment.html">Book Appointment</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-text">
+            <h2>Your Health is Our Priority</h2>
+            <p>Providing high-quality healthcare services to keep you and your family healthy.</p>
+            <a href="appointment.html" class="btn">Book an Appointment</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/hospital.jpeg" alt="Hospital Building">
+        </div>
+    </section>
+
+    
+
+    <div id="about" class="tab-content" style="display:none;">
+        <h2>About Us</h2>
+        <p>We are a leading healthcare provider offering comprehensive medical services with a focus on compassionate care.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Our Hospital</p>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const links = document.querySelectorAll('.tab-link');
+
+            tabs.forEach(tab => {
+                tab.style.display = 'none';
+            });
+
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            document.getElementById(tabName).style.display = 'block';
+            document.querySelector(`.tab-link[href="#${tabName}"]`).classList.add('active');
+        }
+
+        // Initialize by showing the services tab
+        showTab('services');
+    </script>
+</body>
+</html>
